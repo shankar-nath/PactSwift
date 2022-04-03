@@ -257,10 +257,10 @@ private extension MockService {
 					finalize(file: file, line: line) {
 						switch $0 {
 						case .success(let message):
-							Logger.log(message: message, data: pact.data)
+							Logger.log(message: message, data: self.pact.data)
 							completion()
 						case .failure(let error):
-							failWith(error.description, file: file, line: line)
+							self.failWith(error.description, file: file, line: line)
 							completion()
 						}
 					}
